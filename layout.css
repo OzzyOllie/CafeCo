@@ -1,0 +1,34 @@
+/* ===== Layout helpers (keep small to avoid style fights) ===== */
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+
+main { padding: 0 18px 120px; } /* comfortable bottom spacing */
+
+/* optional: glass modifier for header if you use it */
+.site-header.glass{
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(140,25,52,.10);
+  box-shadow: 0 6px 20px rgba(140,25,52,.10);
+}
+
+/* fancy nav states (works with .nav-link class if you use it) */
+.nav-link{
+  position:relative; padding:8px 12px; border-radius:12px;
+  color:var(--ink-900); font-weight:600; letter-spacing:.2px;
+  transition: transform .15s ease, color .15s ease, background .2s ease;
+}
+.nav-link::after{
+  content:""; position:absolute; left:12px; right:12px; bottom:6px; height:2px;
+  background: linear-gradient(90deg, var(--cherry-600), var(--cherry-300));
+  border-radius:2px; transform:scaleX(0); transform-origin:left;
+  transition: transform .18s ease;
+}
+.nav-link:hover{ transform:translateY(-1px) }
+.nav-link:hover::after{ transform:scaleX(1) }
+.nav-link.active{
+  color:#fff;
+  background: linear-gradient(90deg, var(--cherry-600), var(--cherry-300));
+  box-shadow: 0 8px 18px var(--cherry-glow);
+}

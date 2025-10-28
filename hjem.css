@@ -1,0 +1,202 @@
+* { box-sizing: border-box; }
+body, html, #root { height: 100%; margin: 0; }
+a { text-decoration: none; }
+
+/* layout helpers */
+main { padding: 0 18px 120px; } /* extra space below content */
+
+/* HEADER */
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo{
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: transparent;
+  display: block
+}
+
+.brand-name{ 
+  font-weight: 700; 
+  letter-spacing: .3px; 
+  line-height: 1;
+  align-items: center;
+  display: flex;
+  transform: translateY(6px);
+  font-size: 1.2rem;
+}
+
+.right-side{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-auth{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.main-nav{ 
+    display: flex;
+    gap: 16px;
+}
+
+.auth{ 
+    display: flex; 
+    gap: 10px; 
+    align-items: center;
+}
+
+
+.auth a{
+    color: #222; 
+}
+
+
+.auth .btn{
+  padding: 6px 10px;
+  border: 1px solid #222;
+  border-radius: 8px;
+}
+
+/* HERO SPLIT */
+.hero{ max-width: 900px; margin: 64px auto; text-align: center; }
+
+.hero-split{
+  /* remove big viewport lock so page can scroll */
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 40px auto 32px;
+}
+
+.left-card{
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.left-card h1{
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1;
+}
+.left-card h2{ margin: 18px 0 8px; font-size: 20px; }
+
+.left-card p{ color: #445; line-height: 1.7; margin: 10px 0; }
+.left-card .note{
+  background: #f7f9ff;
+  border: 1px solid #e5efff;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.bullet{ margin: 8px 0 12px; padding-left: 18px; }
+.bullet li{ margin: 6px 0; }
+
+.cta-row{ display: flex; gap: 10px; margin-top: 14px; }
+.btn-primary, .btn-ghost{
+  display: inline-block; padding: 10px 14px; border-radius: 12px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary{ background: #3b82f6; color: #fff; box-shadow: 0 6px 16px rgba(59,130,246,.25); }
+.btn-primary:hover{ transform: translateY(-2px); }
+.btn-ghost{ border: 1px solid #ccd6f6; color: #1f3a8a; background: #f8fbff; }
+.btn-ghost:hover{ background: #eef5ff; }
+
+.right-visual{
+  border: 1px dashed #9db5ff;
+  border-radius: 18px;
+  min-height: 380px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg,#f8fbff,#ffffff);
+}
+
+.right-visual{ position: relative; overflow: hidden;}
+.right-visual .hero-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+
+.right-visual .ph{ color: #7aa2ff; letter-spacing: .5px; }
+
+@media (max-width: 900px){
+  .hero-split{ grid-template-columns: 1fr; }
+  .right-visual{ min-height: 260px; }
+}
+
+/* FOOTER */
+.site-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+  margin-top: 40px;
+}
+
+/* CONTACT PILLS */
+.contact-cards{
+  margin-top: 24px;
+  margin-bottom: 80px;           /* extra space below cards */
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-cards .card{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 2px solid #3b82f6;
+  border-radius: 9999px;
+  color: #3b82f6;
+  text-decoration: none;
+  box-shadow: 0 2px 0 rgba(59,130,246,.2);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.contact-cards .icon{
+  width: 32px; height: 32px; display: grid; place-items: center;
+  border-radius: 50%;
+  background: #eef4ff;
+  font-size: 16px;
+}
+.contact-cards .label{ font-size: 12px; color: #5b6b8b; line-height: 1; }
+.contact-cards .value{ font-weight: 700; letter-spacing: .5px; }
+
+.contact-cards .card:hover{
+  background: #eef4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(59,130,246,.25);
+}
+
+@media (max-width: 520px){
+  .contact-cards .card{ width: 100%; justify-content: center; }
+}

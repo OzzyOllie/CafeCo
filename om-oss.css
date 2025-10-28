@@ -1,0 +1,138 @@
+/* ===== Om Oss – Cherry styling ===== */
+
+/* Team section (two aligned rows) */
+.team{ --cols:4; max-width:1200px; margin:28px auto }
+.team h2{ margin:0 0 10px }
+
+.team-grid,
+.photos-grid{
+  display:grid;
+  grid-template-columns: repeat(var(--cols), minmax(240px, 1fr));
+  gap:20px;
+}
+
+.quick-stats{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quick-stats .stats{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  padding: 6px 10px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.quick-stats .num{
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quick-stats .lable{
+  font-size: 12px;
+  opacity: .8;
+}
+
+/* Info boxes */
+.team-card{
+  background:#fff; border:1px solid var(--line); border-radius:16px;
+  padding:16px; box-shadow: var(--shadow-1);
+  display:grid; grid-template-columns:56px 1fr; gap:12px; align-items:start;
+}
+.avatar{
+  width:56px; height:56px; border-radius:12px;
+  background:#ffe4ea; display:grid; place-items:center; font-size:26px;
+  box-shadow: inset 0 0 0 2px rgba(236,92,118,.12);
+}
+.info h3{ margin:2px 0 4px }
+.info .role{ margin:0 0 8px; color: var(--text-500) }
+.tags{ display:flex; flex-wrap:wrap; gap:6px }
+.tags span{
+  font-size:12px; padding:4px 8px; border:1px solid var(--line);
+  background:#fff7f9; border-radius:999px; color: var(--text-700);
+}
+
+/* Photo row (images OR placeholder), fixed size 244x368 */
+.photos-grid{ grid-template-columns: repeat(var(--cols), 244px); justify-content: space-between }
+.photo-box{
+  width:244px; height:368px;
+  background:#fff; border:1px solid var(--line); border-radius:16px;
+  overflow:hidden; box-shadow: var(--shadow-1);
+  display:block;
+}
+.photo-box img{ width:100%; height:100%; object-fit:cover; object-position:50% 18% }
+.photo-placeholder{
+  width:100%; height:100%;
+  display:grid; place-items:center; font-weight:800; letter-spacing:.3px;
+  color:#6b2a38; background: repeating-linear-gradient(45deg,#fff5f7 0 14px,#ffe9ee 14px 28px);
+  user-select:none; text-transform: lowercase;
+}
+
+/* Services table */
+.services{ margin-top:28px }
+.svc-wrap{ margin-top:12px }
+
+.svc-controls{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:12px;
+}
+.svc-controls .svc-search{
+  flex:1 1 260px; min-width:220px;
+  padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:16px; background:#fff7f8;
+}
+.svc-controls select{
+  padding:10px 12px; border:1px solid var(--line); border-radius:10px; background:#fff; font-size:16px; color:var(--text-700);
+}
+.svc-controls .zoom button{
+  padding:8px 12px; border:1px solid var(--line); background:#fff; border-radius:10px; font-weight:700; color:var(--ink-900);
+}
+
+.svc-table-wrap{ overflow:auto; border:1px solid var(--line); border-radius:14px; background:#fff }
+.svc-table{ width:100%; border-collapse:separate; border-spacing:0; font-size:18px }
+.svc-table thead th{
+  position:sticky; top:0; z-index:1;
+  background:#fff5f7; color:var(--ink-900); text-align:left; padding:14px 12px;
+  border-bottom:1px solid var(--line); cursor:pointer; user-select:none;
+}
+.svc-table thead th.right,.svc-table td.right{ text-align:right }
+.svc-table thead th.active .caret{ margin-left:6px; font-size:12px; opacity:.8 }
+.svc-table tbody td{ padding:14px 12px; border-bottom:1px solid #f2e3e6; vertical-align:top }
+.svc-table tbody tr:nth-child(even){ background:#fffafb }
+.svc-table tbody tr:hover{ background:#fff0f3 }
+.svc-table td.bold{ font-weight:700; color:var(--ink-900) }
+
+.badge{
+  padding:6px 10px; border-radius:999px; font-weight:700; font-size:14px;
+  background:#ffe4ea; color:var(--ink-900);
+}
+
+/* Responsive columns */
+@media (max-width: 980px){
+  .team{ --cols:2 }
+  .photos-grid{ justify-content:center; grid-template-columns: repeat(2, 244px); gap:18px }
+}
+@media (max-width: 560px){
+  .team{ --cols:1 }
+  .photos-grid{ grid-template-columns: 244px; justify-content:center }
+}
+
+/* Mobile table cards */
+@media (max-width: 720px){
+  .svc-table{ font-size:16px }
+  .svc-table thead{ display:none }
+  .svc-table, .svc-table tbody, .svc-table tr, .svc-table td{ display:block; width:100% }
+  .svc-table tbody tr{ border-bottom:1px solid var(--line); padding:10px 10px }
+  .svc-table td{ border:none; padding:6px 0 }
+  .svc-table td::before{
+    content: attr(data-label);
+    display:block; font-size:12px; color: var(--text-500); margin-bottom:2px;
+  }
+}

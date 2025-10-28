@@ -1,0 +1,105 @@
+/* ===== Bestill time + Kundeomtaler (Cherry theme-friendly) ===== */
+
+.booking-wrap{ max-width: 1100px; margin: 32px auto 120px; padding: 0 18px }
+
+.booking-hero h1{ margin:0 0 8px; font-size: clamp(28px, 4vw, 44px) }
+.booking-hero p{ color: var(--text-700); line-height:1.7; margin: 8px 0 16px }
+
+/* Card */
+.booking-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow: var(--shadow-1);
+  padding: 18px;
+}
+
+/* Form */
+.booking-form{ display:grid; gap:14px }
+.form-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(240px,1fr));
+  gap:12px;
+}
+@media (max-width: 720px){
+  .form-grid{ grid-template-columns: 1fr }
+}
+
+.field{ display:grid; gap:6px }
+.field > span{ font-weight:600; color: var(--ink-900) }
+input, select, textarea{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px 12px;
+  font: inherit;
+  color: var(--text-700);
+  outline: none;
+}
+input:focus, select:focus, textarea:focus{
+  border-color: var(--cherry-600);
+  box-shadow: 0 0 0 3px rgba(236,92,118,.18);
+}
+
+/* Actions */
+.actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 6px }
+.btn-primary, .btn-ghost{
+  display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+.btn-primary{ background: var(--cherry-600); color:#fff; box-shadow: 0 6px 16px var(--cherry-glow) }
+.btn-primary:hover{ transform: translateY(-2px) }
+.btn-ghost{ border:1px solid var(--line); color: var(--ink-900); background:#fff }
+.btn-ghost:hover{ background:#fff7f9 }
+
+/* Reviews */
+.reviews{ margin-top: 28px }
+.reviews-head h2{ margin: 0 0 6px }
+.reviews-head p{ color: var(--text-500); margin:0 0 12px }
+
+.review-form{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow: var(--shadow-1);
+  display:grid;
+  gap:10px;
+  padding:12px;
+  margin-bottom: 16px;
+}
+.stars-input{ display:flex; gap:6px; align-items:center }
+.star-btn{
+  font-size: 22px;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: background .12s ease, transform .12s ease, box-shadow .12s ease;
+}
+.star-btn.on{ color: var(--cherry-600); border-color: var(--cherry-600); background: #fff7f9 }
+.star-btn:active{ transform: scale(.96) }
+
+.review-form textarea{
+  width:100%;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.reviews-list{ display:grid; gap:12px }
+.empty{
+  background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px;
+  text-align:center; color: var(--text-500);
+}
+.review-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow: var(--shadow-1);
+  padding:12px;
+  display:grid; gap:6px;
+}
+.review-card .stars{ color: var(--cherry-600); letter-spacing: 2px }
+.review-card .comment{ margin: 0; color: var(--text-700) }
+.review-card .meta{ font-size: 12px; color: var(--text-500) }

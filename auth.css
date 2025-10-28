@@ -1,0 +1,71 @@
+/* Center the card and keep it small */
+.auth-page {
+  max-width: 420px;
+  margin: 48px auto 96px;
+  padding: 0 18px;
+}
+
+.auth-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: 22px;
+}
+
+.auth-card h1 {
+  margin: 0 0 12px;
+}
+
+/* Stack labels/inputs with a little space */
+.auth-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.auth-form label {
+  font-size: 0.95rem;
+  color: var(--ink-900);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+}
+
+/* Primary button */
+.auth-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(90deg, #b0253c, #e0566b); /* cherry shades */
+  box-shadow: 0 8px 18px rgba(224, 86, 107, .25);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.auth-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(224,86,107,.28); }
+
+.auth-help {
+  margin-top: 10px;
+  font-size: .95rem;
+  color: var(--slate-500);
+}
+
+.auth-error {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #f4c2c9;
+  background: #fff1f3;
+  color: #9f1239;
+  border-radius: 10px;
+  font-size: .95rem;
+}
